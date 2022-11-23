@@ -1,0 +1,14 @@
+@use '../../base/variables' as v;
+@use '../../base/mixins' as m;
+
+.main {
+    height: 35rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__imagen {
+        height: 50%;
+        width: 50%;
+    }
+}
