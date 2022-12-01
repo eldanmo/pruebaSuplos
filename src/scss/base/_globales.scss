@@ -42,3 +42,7 @@ select {
     text-align: center;
     font-size: 1.6rem;
 }
+
+fieldset:not(:first-of-type) {
+    display: none;
+}
