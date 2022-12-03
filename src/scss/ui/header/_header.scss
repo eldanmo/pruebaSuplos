@@ -1,9 +1,7 @@
 @use '../../base/variables' as v;
 @use '../../base/mixins' as m;
 
-.header {
-    background-image: linear-gradient(to right, rgb(0 0 0 / .7), rgb(0 0 0 / .3)),
-     url('../img/header_bg.jpg');
+.header { 
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;

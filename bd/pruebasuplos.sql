@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-11-2022 a las 19:36:27
+-- Tiempo de generación: 03-12-2022 a las 01:16:10
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -2064,8 +2064,29 @@ CREATE TABLE `proceso` (
   `descripcionAlcance` varchar(500) COLLATE utf8_spanish2_ci NOT NULL,
   `moneda` char(3) COLLATE utf8_spanish2_ci NOT NULL,
   `presupuesto` decimal(10,0) NOT NULL,
-  `actividad` int(11) NOT NULL
+  `actividad` int(11) NOT NULL,
+  `fechaInicio` date NOT NULL,
+  `horaInicio` time NOT NULL,
+  `fechaCierre` date NOT NULL,
+  `horaCierre` time NOT NULL,
+  `estado` varchar(255) COLLATE utf8_spanish2_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `proceso`
+--
+
+INSERT INTO `proceso` (`id`, `objeto`, `descripcionAlcance`, `moneda`, `presupuesto`, `actividad`, `fechaInicio`, `horaInicio`, `fechaCierre`, `horaCierre`, `estado`) VALUES
+(37, 'objeto', 'lkj', 'COP', '2000', 1, '2022-12-02', '15:53:00', '2022-12-05', '15:54:00', 'ACTIVO'),
+(38, 'objeto', 'asd', 'COP', '2000', 0, '2022-12-02', '15:56:00', '2022-12-09', '15:56:00', 'ACTIVO'),
+(39, 'objeto', 'zxc', 'COP', '2000', 0, '2022-12-03', '16:00:00', '2022-12-09', '16:00:00', 'ACTIVO'),
+(40, 'objeto', 'asdf', 'COP', '2000', 1, '2022-12-03', '16:19:00', '2022-12-03', '16:19:00', 'ACTIVO'),
+(41, 'objeto', 'prueba 40', 'COP', '2000', 65, '2022-12-03', '16:21:00', '2022-12-03', '17:21:00', 'ACTIVO'),
+(42, 'objeto', 'asd', 'COP', '2000', 64, '2022-12-03', '16:24:00', '2022-12-03', '16:24:00', 'ACTIVO'),
+(43, 'objeto', 'prueba 42', 'COP', '2000', 66, '2022-12-03', '04:27:00', '2022-12-03', '16:27:00', 'ACTIVO'),
+(44, 'objeto', 'prueba 43', 'COP', '2000', 63, '2022-12-03', '04:29:00', '2022-12-06', '16:29:00', 'ACTIVO'),
+(45, 'objeto', 'prueba reset', 'COP', '2000', 65, '2022-12-03', '16:29:00', '2022-12-03', '16:29:00', 'ACTIVO'),
+(46, 'objeto', 'prueba multiples envios', 'COP', '2000', 65, '2022-12-03', '16:30:00', '2022-12-03', '16:30:00', 'ACTIVO');
 
 --
 -- Índices para tablas volcadas
@@ -2097,7 +2118,7 @@ ALTER TABLE `actividades`
 -- AUTO_INCREMENT de la tabla `proceso`
 --
 ALTER TABLE `proceso`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
