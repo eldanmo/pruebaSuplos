@@ -11,9 +11,7 @@ $objProceso->mostrarProceso($_REQUEST['id']);
 
 $respuesta = $objProceso->consultarProceso();
 
-echo $respuesta->fetch_object();
-
-/*$html = '<main class="creacion contenedor">
+$html = '<main class="creacion contenedor">
 <h2 class="creacion__titulo">Crear proceso / Evento participación entrada</h2>
 
 <form class="formulario" id="formulario">
@@ -115,7 +113,7 @@ echo $respuesta->fetch_object();
 </div>
 </main>';
 
-echo $html;*/
+echo $html;
 
 /*if($respuesta){
     echo json_encode($html);

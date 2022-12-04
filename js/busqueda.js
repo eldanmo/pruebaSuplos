@@ -24,5 +24,5 @@ formularioBuscar.addEventListener('submit', (e)=>{
 })
 
 function editar(id){
-    console.log(id) 
+    window.location.href = "../controller/buscarProceso.php?id="+id 
 }
