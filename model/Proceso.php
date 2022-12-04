@@ -1,5 +1,6 @@
 <?php
 class Proceso {
+	private $id;
     private $objeto;
     private $descripcionAlcance;
     private $moneda;
@@ -10,6 +11,16 @@ class Proceso {
     private $fechaCierre;
     private $horaCierre;
     private $estado;
+
+	public function setId($id)
+	{
+		$this->id=$id;
+	}
+	
+	public function getId()
+	{
+		return ($this->id);
+	}
 
     public function setObjeto($objeto)
 	{
@@ -148,6 +159,34 @@ class Proceso {
 	public function consultarActividad(){
 		$this->Conexion=Conectarse();
         $sql="SELECT * FROM actividades WHERE nombreproducto LIKE '%$this->actividad%'";
+        $respuesta=$this->Conexion->query($sql);
+        $this->Conexion->close();
+        return $respuesta;
+	}
+
+	public function mostrarProcesos($id, $objeto, $estado)
+    {
+        $this->id=$id;
+        $this->objeto=$objeto;
+        $this->estado=$estado;
+    }
+
+	public function consultarProcesos(){
+		$this->Conexion=Conectarse();
+        $sql="SELECT * FROM proceso WHERE id LIKE '%$this->id%'AND objeto LIKE '%$this->objeto%'AND estado LIKE '%$this->estado%'";
+        $respuesta=$this->Conexion->query($sql);
+        $this->Conexion->close();
+        return $respuesta;
+	}
+
+	public function mostrarProceso($id)
+    {
+        $this->id=$id;
+    }
+
+	public function consultarProceso(){
+		$this->Conexion=Conectarse();
+        $sql="SELECT * FROM proceso WHERE id = '$this->id'";
         $respuesta=$this->Conexion->query($sql);
         $this->Conexion->close();
         return $respuesta;

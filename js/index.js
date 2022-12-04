@@ -85,7 +85,7 @@ formulario.addEventListener('submit', (e)=>{
             }else{
                 respuesta1.innerHTML = `
                 <div class="alerta alerta__success">
-                    Proceso / Evento creado correctamente ${data}
+                    Proceso / Evento creado correctamente
                 </div>
                 `
                 document.getElementById('formulario').reset()

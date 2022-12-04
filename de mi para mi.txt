@@ -1,0 +1,3 @@
+redireccionar el formulario con js al controlador de editar, 
+este controlador hara la consulta por id y retornará el formulario con los campos diligenciados, 
+se debe agregar el campo de cargar documentos
